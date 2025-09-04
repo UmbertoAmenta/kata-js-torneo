@@ -112,3 +112,9 @@ fighter: { name: "Vegeta", power: 10000 },
 weapon: { name: "bare hand", power: 0 }
 }
 -> **armedFighters**
+
+### Fase 2 - 💪 Allenamento:
+
+Ogni combattente si allena per aumentare la propria potenza.
+Per ognuno verrà generato un numero casuale tra 1 e 100 che rappresenta il moltiplicatore dato dall'allenamento.
+-> **trainedFighters**

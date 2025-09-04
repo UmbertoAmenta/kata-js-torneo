@@ -12,7 +12,7 @@ const registeredFighters = [...fighters];
 const availableWeapons = [...weapons];
 
 // -------------------------------------------------
-// FASE 1 - Scelta dell'arma
+// FASE 1 - 🔥 Scelta dell'arma
 
 // Modifica della struttura dati
 const currentFighters = registeredFighters.map((f) => ({
@@ -63,5 +63,20 @@ const armedFighters = shuffledFighters.map((f) => {
 
 // Combattenti armati
 console.log("Fase 1 - Scelta dell'arma");
-
 console.log("Combattenti armati:", armedFighters);
+
+// -------------------------------------------------
+// FASE 2 - 💪 Allenamento
+
+const trainedFighters = armedFighters.map((f) => {
+  const powerMultiplier = Math.ceil(Math.random() * 100);
+
+  return {
+    ...f,
+    totalPower: (f.fighter.power + f.weapon.power) * powerMultiplier,
+    training: powerMultiplier,
+  };
+});
+
+console.log("Fase 2 - Allenamento");
+console.log("Allenamento completato:", trainedFighters);
