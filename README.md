@@ -42,7 +42,10 @@ Dati di partenza:
 - **fighters**: gli iscritti al torneo [{name, power}...]
 - **weapons**: armi disponibili [{name, power}...]
 
-Per non modificare i dati originali lavorerò su delle copie degli array forniti.
+Per non modificare i dati originali lavorerò su delle copie degli array forniti
+
+- **registeredFighters**
+- **availableWeapons**
 
 Ragionando sulla struttura dati di _fighters_, che dovrà subire delle modifiche, ho pensato alle seguenti alternative:
 
@@ -91,3 +94,21 @@ Struttura più compatta ma forse meno intuitiva in quanto nome e relativa potenz
 Opterò per la n°2, la cui manipolazione sarà più verbosa ma che dovrebbe essere più "comoda" a lungo termine.
 
 ### Fase 1 - 🔥 Scelta dell'Arma:
+
+Verrà modificata la loro struttura dati del singolo combattente in:
+{ fighter: { name: "Vegeta", power: 10000 } }
+-> **currentFighters**
+
+Per garantire ad ogni combattente le stesse probabilità di ricevere le armi migliori, verranno riordinati casualmente.
+-> **shuffledFighters**
+
+Qualora fossero presenti meno armi rispetto ai combattenti verrà aggiunta l'arma
+{ name: "bare hands", power: 0 }
+fino ad eguagliare la lunghezza dei due array.
+
+Ad ogni combattente sarà assegnata casualmente una delle armi (ogni arma può essere assegnata ad un solo combattente) per ottenere:
+{
+fighter: { name: "Vegeta", power: 10000 },
+weapon: { name: "bare hand", power: 0 }
+}
+-> **armedFighters**
