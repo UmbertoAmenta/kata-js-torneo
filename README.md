@@ -93,7 +93,7 @@ Struttura più compatta ma forse meno intuitiva in quanto nome e relativa potenz
 
 Opterò per la n°2, la cui manipolazione sarà più verbosa ma che dovrebbe essere più "comoda" a lungo termine.
 
-### Fase 1 - 🔥 Scelta dell'Arma:
+### Fase 1 - 🔥 Scelta dell'Arma
 
 Verrà modificata la loro struttura dati del singolo combattente in:
 { fighter: { name: "Vegeta", power: 10000 } }
@@ -113,8 +113,13 @@ weapon: { name: "bare hand", power: 0 }
 }
 -> **armedFighters**
 
-### Fase 2 - 💪 Allenamento:
+### Fase 2 - 💪 Allenamento
 
 Ogni combattente si allena per aumentare la propria potenza.
 Per ognuno verrà generato un numero casuale tra 1 e 100 che rappresenta il moltiplicatore dato dall'allenamento.
 -> **trainedFighters**
+
+### Fase 3 - 🎯 Qualificazione
+
+In fase di qualificazioni saranno esclusi dagli incontri tutti i combattenti la cui potenza è inferiore ai 2000 punti.
+-> **qualifiedFighters**

@@ -62,7 +62,7 @@ const armedFighters = shuffledFighters.map((f) => {
 });
 
 // Combattenti armati
-console.log("Fase 1 - Scelta dell'arma");
+console.log("🔥 Fase 1 - Scelta dell'arma");
 console.log("Combattenti armati:", armedFighters);
 
 // -------------------------------------------------
@@ -78,5 +78,17 @@ const trainedFighters = armedFighters.map((f) => {
   };
 });
 
-console.log("Fase 2 - Allenamento");
+console.log("💪 Fase 2 - Allenamento");
 console.log("Allenamento completato:", trainedFighters);
+
+// -------------------------------------------------
+// FASE 3 - 🎯 Qualificazione:
+
+const qualifiedFighters = trainedFighters.filter((f) => f.totalPower >= 2000);
+
+console.log("🎯 FASE 3 - Qualificazione");
+
+console.log(
+  "Ecco a voi i Guerrieri qualificati agli incontri!:",
+  qualifiedFighters
+);
