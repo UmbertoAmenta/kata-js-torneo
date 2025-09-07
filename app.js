@@ -138,8 +138,23 @@ while (toClashes.length > 0) {
 }
 
 console.log("⚔️ Fase 4 - Combattimento");
-
 console.log(
   "Ecco le coppie di sfidanti e i vincitori degli incontri!!",
   matches
 );
+
+// -------------------------------------------------
+// FASE 5 - 🏆 Premiazione
+
+const winners = matches.map((match) => {
+  return match.winner;
+});
+
+const podium = winners
+  .sort((a, b) => b.totalPower - a.totalPower)
+  .filter((winner, index) => index <= 2);
+
+// console.log(winners);
+
+console.log("🏆 Fase 5 - Premiazione");
+console.log("Ecco a voi i vincitori!!", podium);

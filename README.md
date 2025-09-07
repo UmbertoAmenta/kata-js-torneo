@@ -134,3 +134,10 @@ Infine, lo scontro vero e proprio con un confronto del potere raggiunto dai comb
 
 Per la creazione del tabellone ho scelto di creare un nuovo array contenente i dati relativi al singolo scontro, così da avere accesso diretto ad essi nel caso in cui dovessi implementare animazioni o statistiche. L'alternativa è quella di ottenere direttamente i vincitori degli scontri confrontando il **totalPower** dei combattenti con indice index e index+1 ogni index+2 elementi.
 -> **matches**
+
+### Fase 5 - 🏆 Premiazione:
+
+Raccolta dei vincitori
+-> **winners**
+Selezione dei 3 combattenti più potenti, in ordine decrescente
+-> **podium**
