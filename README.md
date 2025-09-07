@@ -123,3 +123,14 @@ Per ognuno verrà generato un numero casuale tra 1 e 100 che rappresenta il molt
 
 In fase di qualificazioni saranno esclusi dagli incontri tutti i combattenti la cui potenza è inferiore ai 2000 punti.
 -> **qualifiedFighters**
+
+### Fase 4 - ⚔️ Combattimento:
+
+In questa fase se il numero di combattenti è dispari serve aggiungere un robot così che ognuno abbia un avversario.
+Per rendere l'assegnazione del suo avversario casuale ho deciso di scegliere casualmente una posizione occupata dai combattenti e di posizionarvi il robot, facendo in modo che la posizione nell'array degli altri combattenti "slitti" di 1
+
+A questo punto è necessario creare il tabellone stabilendo le coppie di avversari (in base al loro indice).
+Infine, lo scontro vero e proprio con un confronto del potere raggiunto dai combattenti.
+
+Per la creazione del tabellone ho scelto di creare un nuovo array contenente i dati relativi al singolo scontro, così da avere accesso diretto ad essi nel caso in cui dovessi implementare animazioni o statistiche. L'alternativa è quella di ottenere direttamente i vincitori degli scontri confrontando il **totalPower** dei combattenti con indice index e index+1 ogni index+2 elementi.
+-> **matches**
