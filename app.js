@@ -111,7 +111,7 @@ const trainedFighters = armedFighters.map((f) => {
 });
 
 // DATI
-// console.log("Allenamento completato", trainedFighters);
+console.log("Allenamento completato", trainedFighters);
 
 // ANNUNCI
 console.log("Avranno usufruito tutti della stanza dello spirito e del tempo?");
@@ -221,7 +221,7 @@ const podium = winners
 // console.log(winners);
 
 // DATI
-console.log("Ecco a voi i vincitori!!", podium);
+// console.log("Ecco a voi i vincitori!!", podium);
 
 // ANNUNCI
 console.log(
