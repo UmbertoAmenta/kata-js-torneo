@@ -1,5 +1,7 @@
 # kata-js-torneo
 
+stack in uso: HTML, CSS, JavaScript Vanilla
+
 Benvenuti al torneo più atteso di tutti i tempi,
 il Torneo Boolkaichi!
 
@@ -33,7 +35,7 @@ tra tutti i vincitori degli scontri, saliranno sul podio i 3 combattenti con la 
 
 ---
 
-## Esecuzione
+## Esecuzione per console
 
 ### Fase 0 - Preparazione del torneo
 
@@ -141,3 +143,16 @@ Raccolta dei vincitori
 -> **winners**
 Selezione dei 3 combattenti più potenti, in ordine decrescente
 -> **podium**
+
+## Implementazione interfaccia grafica
+
+### Decisione struttura
+
+Ogni fase del torneo, a partire dalla preparazione (fase 0) avrà a disposizione l'intera viewport
+
+Implementare le immagini relative ai combattenti nella struttura dati **currentFighters**
+-> **_getImageForFighter_**
+e le immagini relative alle armi in **availableWeapons**
+-> **_getImageForWeapon_**
+
+I combattenti saranno raffigurati come cards, le quali conterranno sempre più dettagli (aggiornati) all'avanzare del torneo

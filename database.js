@@ -100,4 +100,34 @@ const weapons = [
   },
 ];
 
-export { fighters, weapons };
+const fighterImages = {
+  Freezer: "./fighters/freezer.png",
+  Vegeta: "./fighters/vegeta.png",
+  Crilin: "./fighters/crilin.png",
+  "Mr Satan": "./fighters/mr_satan.png",
+  Junior: "./fighters/junior.png",
+  Goku: "./fighters/goku.png",
+  Tensing: "./fighters/tensing.png",
+  Videl: "./fighters/videl.png",
+  Bulma: "./fighters/bulma.png",
+  "C-18": "./fighters/c_18.png",
+  Gohan: "./fighters/gohan.png",
+  Trunks: "./fighters/trunks.png",
+};
+
+const weaponImages = {
+  "Ventaglio della musa": "./weapons/ventaglio_della_musa.png",
+  Scouter: "./weapons/scouter.png",
+  "Bastone Roshi": "./weapons/bastone_roshi.png",
+  "Fagioli Magici": "./weapons/fagioli_magici.png",
+  "Katana di Yajirobei": "./weapons/katana_di_yajirobei.png",
+  "Spada del Dragone Azzurro": "./weapons/spada_del_dragone_azzurro.png",
+  "Armatura Saiyan": "./weapons/armatura_saiyan.png",
+  "Cannone da braccio": "./weapons/cannone_da_braccio.png",
+  "Nuvola d'oro": "./weapons/nuvola_d_oro.png",
+  "Bastone Nyoi": "./weapons/bastone_nyoi.png",
+  "Spada Z": "./weapons/spada_z.png",
+  "Orecchini Potara": "./weapons/orecchini_potara.png",
+};
+
+export { fighters, weapons, fighterImages, weaponImages };

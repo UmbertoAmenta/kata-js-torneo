@@ -1,7 +1,17 @@
-import { fighters, weapons } from "./database.js";
+import { fighters, weapons, fighterImages, weaponImages } from "./database.js";
 
 console.log("🐉 Che il torneo abbia inizio! 🐉");
 console.log("");
+
+// Raccolta immagine combattente da fighterImages
+function getImageForFighter(name) {
+  return fighterImages[name];
+}
+
+// Raccolta immagine arma da weaponImages
+function getImageForWeapon(name) {
+  return weaponImages[name];
+}
 
 // -------------------------------------------------
 // FASE 0 - preparazione del torneo
@@ -10,7 +20,10 @@ console.log("");
 const registeredFighters = [...fighters];
 
 // Armi a disposizione dei combattenti
-const availableWeapons = [...weapons];
+const availableWeapons = weapons.map((w) => ({
+  ...w,
+  image: getImageForWeapon(w.name),
+}));
 
 // Se le armi non bastano, aggiunge la possibilità di combattere a mani nude
 while (availableWeapons.length < registeredFighters.length) {
@@ -44,6 +57,7 @@ const currentFighters = registeredFighters.map((f) => ({
   fighter: {
     name: f.name,
     power: f.power,
+    image: getImageForFighter(f.name),
   },
 }));
 
@@ -147,7 +161,11 @@ const readyToFight = structuredClone(qualifiedFighters);
 if (qualifiedFighters.length % 2 == 1) {
   const robotIndex = Math.floor(Math.random() * qualifiedFighters.length);
   const robot = {
-    fighter: { name: "Red Ribbon Robot", power: 4000 },
+    fighter: {
+      name: "Red Ribbon Robot",
+      power: 4000,
+      image: "../fighters/red_ribbon_robot.png",
+    },
     totalPower: 4000,
   };
 
