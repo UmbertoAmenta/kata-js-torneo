@@ -1,17 +1,15 @@
-import { fighters, weapons, fighterImages, weaponImages } from "./database.js";
+// Database
+import { fighters, weapons } from "./database.js";
+
+// Utility
+import { getImageForFighter, getImageForWeapon } from "./utils/image.js";
+import { renderFighters } from "./utils/render.js";
+import { initLayout, fasesConfig } from "./utils/layout.js";
+
+initLayout(fasesConfig);
 
 console.log("🐉 Che il torneo abbia inizio! 🐉");
 console.log("");
-
-// Raccolta immagine combattente da fighterImages
-function getImageForFighter(name) {
-  return fighterImages[name];
-}
-
-// Raccolta immagine arma da weaponImages
-function getImageForWeapon(name) {
-  return weaponImages[name];
-}
 
 // -------------------------------------------------
 // FASE 0 - preparazione del torneo
@@ -61,6 +59,9 @@ const currentFighters = registeredFighters.map((f) => ({
   },
 }));
 
+// RENDER
+renderFighters(currentFighters, ".fase0 .card-list");
+
 // Shuffle dei combattenti
 function fisherYatesShuffle(array) {
   // Create a copy to avoid modifying the original
@@ -93,6 +94,9 @@ const armedFighters = shuffledFighters.map((f) => {
   };
 });
 
+// RENDER
+renderFighters(armedFighters, ".fase1 .card-list");
+
 // DATI
 // console.log("Combattenti armati", armedFighters);
 
@@ -124,6 +128,9 @@ const trainedFighters = armedFighters.map((f) => {
   };
 });
 
+// RENDER
+renderFighters(trainedFighters, ".fase2 .card-list");
+
 // DATI
 console.log("Allenamento completato", trainedFighters);
 
@@ -137,6 +144,9 @@ console.log("");
 console.log("🎯 FASE 3 - Qualificazione");
 
 const qualifiedFighters = trainedFighters.filter((f) => f.totalPower >= 2000);
+
+// RENDER
+renderFighters(qualifiedFighters, ".fase3 .card-list");
 
 // DATI
 // console.log(
@@ -164,7 +174,7 @@ if (qualifiedFighters.length % 2 == 1) {
     fighter: {
       name: "Red Ribbon Robot",
       power: 4000,
-      image: "../fighters/red_ribbon_robot.png",
+      image: "../public/fighters/red_ribbon_robot.png",
     },
     totalPower: 4000,
   };
@@ -206,6 +216,9 @@ while (toClashes.length > 0) {
   matches.push(match);
 }
 
+// RENDER
+renderFighters(readyToFight, ".fase4 .card-list");
+
 // DATI
 // console.log(
 //   "Ecco le coppie di sfidanti e i vincitori degli incontri!!",
@@ -237,6 +250,9 @@ const podium = winners
   .filter((winner, index) => index <= 2);
 
 // console.log(winners);
+
+// RENDER
+renderFighters(podium, ".fase5 .card-list");
 
 // DATI
 // console.log("Ecco a voi i vincitori!!", podium);

@@ -148,11 +148,18 @@ Selezione dei 3 combattenti più potenti, in ordine decrescente
 
 ### Decisione struttura
 
-Ogni fase del torneo, a partire dalla preparazione (fase 0) avrà a disposizione l'intera viewport
+Ogni fase del torneo, a partire dalla preparazione (fase 0) avrà a disposizione l'intera viewport. Sarà possibile spostarsi da una fase all'altra tramite scroll
 
-Implementare le immagini relative ai combattenti nella struttura dati **currentFighters**
+<!-- e bottoni. Un pulsante personalizzato in base alla fase in cui ci si trova permetterà la visualizzazione di dati secondari o avvierà animazioni, andando a modificare la schermata relativa alla fase in corso. -->
+
+Implementazione delle immagini relative ai combattenti nella struttura dati **currentFighters**
 -> **_getImageForFighter_**
-e le immagini relative alle armi in **availableWeapons**
+e delle immagini relative alle armi in **availableWeapons**
 -> **_getImageForWeapon_**
+funzioni gestite su _image.js_
 
-I combattenti saranno raffigurati come cards, le quali conterranno sempre più dettagli (aggiornati) all'avanzare del torneo
+I combattenti saranno raffigurati come cards, le quali conterranno il nome e la potenza raggiunta dal singolo combattente e la sua immagine, all'hover sulla card appariranno sempre più dettagli (aggiornati) all'avanzare del torneo:
+
+- potenza base del combattente
+- nome, immagine e potenza arma
+- qualità dell'allenamento (con relativa barra)
