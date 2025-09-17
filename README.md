@@ -51,6 +51,7 @@ Per non modificare i dati originali lavorerò su delle copie degli array forniti
 
 Ragionando sulla struttura dati di _fighters_, che dovrà subire delle modifiche, ho pensato alle seguenti alternative:
 
+```js
 1. {
    id: 1;
    name: "Vegeta";
@@ -60,9 +61,11 @@ Ragionando sulla struttura dati di _fighters_, che dovrà subire delle modifiche
    trainingMultiplier: null;
    }
    <!-- totalPower: "(basePower + weaponPower) \* trainingMultiplier"; -->
+```
 
 Su un unico livello, facile da gestire e chiara, fin tanto che la lista di proprietà non cresce troppo
 
+```js
 2. {
    fighter: {
    name: "Vegeta";
@@ -77,9 +80,11 @@ Su un unico livello, facile da gestire e chiara, fin tanto che la lista di propr
    }
    }
    <!-- totalPower: "(fighter.power + weapon.power) \* training.multiplier"; -->
+```
 
 Facile da leggere, anche se dovesse crescere ulteriormente. PIù scomoda da gestire a causa degli annidamenti
 
+```js
 3. {
    name: "Vegeta";
    weapon: "none";
@@ -90,6 +95,7 @@ Facile da leggere, anche se dovesse crescere ulteriormente. PIù scomoda da gest
    }
    }
    <!-- totalPower: "(growth.fighterPow + growth.weaponPow) \* training.Mod"; -->
+```
 
 Struttura più compatta ma forse meno intuitiva in quanto nome e relativa potenze di combattente e arma si trovano su livelli differenti
 
@@ -98,21 +104,30 @@ Opterò per la n°2, la cui manipolazione sarà più verbosa ma che dovrebbe ess
 ### Fase 1 - 🔥 Scelta dell'Arma
 
 Verrà modificata la loro struttura dati del singolo combattente in:
+
+```js
 { fighter: { name: "Vegeta", power: 10000 } }
+```
+
 -> **currentFighters**
 
 Per garantire ad ogni combattente le stesse probabilità di ricevere le armi migliori, verranno riordinati casualmente.
 -> **shuffledFighters**
 
 Qualora fossero presenti meno armi rispetto ai combattenti verrà aggiunta l'arma
+
+```js
 { name: "bare hands", power: 0 }
+```
+
 fino ad eguagliare la lunghezza dei due array.
 
 Ad ogni combattente sarà assegnata casualmente una delle armi (ogni arma può essere assegnata ad un solo combattente) per ottenere:
-{
-fighter: { name: "Vegeta", power: 10000 },
-weapon: { name: "bare hand", power: 0 }
-}
+
+```js
+{ fighter: { name: "Vegeta", power: 10000 }, weapon: { name: "bare hand", power: 0 } }
+```
+
 -> **armedFighters**
 
 ### Fase 2 - 💪 Allenamento

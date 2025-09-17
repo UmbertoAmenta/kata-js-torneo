@@ -38,17 +38,21 @@ const fightersNames = registeredFighters.map((f) => f.name);
 const weaponsNames = availableWeapons.map((w) => w.name);
 
 console.log(
-  "Ecco a voi gli sfidanti..",
-  fightersNames,
-  "..e le armi a loro disposizione!",
-  weaponsNames
+  "Ecco a voi gli sfidanti.."
+  // , fightersNames
 );
+console.table(fighters);
+console.log(
+  "..e le armi a loro disposizione!"
+  // , weaponsNames
+);
+console.table(weapons);
 console.log("");
 
 // -------------------------------------------------
 // FASE 1 - 🔥 Scelta dell'arma
 
-console.log("🔥 Fase 1 - Scelta dell'arma");
+console.warn("🔥 Fase 1 - Scelta dell'arma");
 
 // Modifica della struttura dati
 const currentFighters = registeredFighters.map((f) => ({
@@ -98,7 +102,7 @@ const armedFighters = shuffledFighters.map((f) => {
 renderFighters(armedFighters, ".fase1 .card-list");
 
 // DATI
-// console.log("Combattenti armati", armedFighters);
+// console.log(armedFighters);
 
 // ANNUNCI
 const armedFightersNames = armedFighters.map((f) => [
@@ -106,16 +110,14 @@ const armedFightersNames = armedFighters.map((f) => [
   f.weapon.name,
 ]);
 
-console.log(
-  "Curiosi di conoscere gli oggetti ottenuti dai combattenti?",
-  armedFightersNames
-);
+console.log("Curiosi di conoscere gli oggetti ottenuti dai combattenti?");
+console.table(armedFightersNames);
 console.log("");
 
 // -------------------------------------------------
 // FASE 2 - 💪 Allenamento
 
-console.log("💪 Fase 2 - Allenamento");
+console.warn("💪 Fase 2 - Allenamento");
 
 // Generazione casuale del moltiplicatore dovuto all'allenamento
 const trainedFighters = armedFighters.map((f) => {
@@ -132,16 +134,22 @@ const trainedFighters = armedFighters.map((f) => {
 renderFighters(trainedFighters, ".fase2 .card-list");
 
 // DATI
-console.log("Allenamento completato", trainedFighters);
+// console.log("Allenamento completato", trainedFighters);
 
 // ANNUNCI
 console.log("Avranno usufruito tutti della stanza dello spirito e del tempo?");
+const tableTrainedFighters = {
+  name: trainedFighters.fighter,
+  training: trainedFighters.training,
+  totalPower: trainedFighters.totalPower,
+};
+console.table(tableTrainedFighters);
 console.log("");
 
 // -------------------------------------------------
 // FASE 3 - 🎯 Qualificazione:
 
-console.log("🎯 FASE 3 - Qualificazione");
+console.warn("🎯 FASE 3 - Qualificazione");
 
 const qualifiedFighters = trainedFighters.filter((f) => f.totalPower >= 2000);
 
@@ -163,7 +171,7 @@ console.log("");
 // -------------------------------------------------
 // FASE 4 - ⚔️ Combattimento
 
-console.log("⚔️ Fase 4 - Combattimento");
+console.warn("⚔️ Fase 4 - Combattimento");
 
 const readyToFight = structuredClone(qualifiedFighters);
 
@@ -241,7 +249,7 @@ console.log("");
 // -------------------------------------------------
 // FASE 5 - 🏆 Premiazione
 
-console.log("🏆 Fase 5 - Premiazione");
+console.warn("🏆 Fase 5 - Premiazione");
 
 const winners = matches.map((match) => match.winner);
 
